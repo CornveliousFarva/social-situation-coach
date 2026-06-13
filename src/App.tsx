@@ -1,121 +1,145 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+type Scenario = {
+  title: string
+  description: string
+  sections: {
+    heading: string
+    items: string[]
+  }[]
+}
+
+const scenarios: Scenario[] = [
+  {
+    title: "Religious or Spiritual Gathering",
+    description:
+      "Prepare for attending a religious or spiritual gathering for the first time.",
+    sections: [
+      {
+        heading: "What to Expect",
+        items: [
+          "People may sit, stand, sing, pray, or listen at different times.",
+          "It is usually okay to quietly observe if you are unsure what to do.",
+          "Some communities may have customs around dress, food, or greetings.",
+        ],
+      },
+      {
+        heading: "Conversation Starters",
+        items: [
+          "Is this your regular community?",
+          "What should a first-time visitor know?",
+          "How long have you been coming here?",
+        ],
+      },
+      {
+        heading: "Exit Strategies",
+        items: [
+          "It was nice meeting you. I’m going to head out.",
+          "Thank you for welcoming me. I appreciated being here.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sporting Event",
+    description:
+      "Navigate attending a game, interacting with fans, and handling crowd energy.",
+    sections: [
+      {
+        heading: "What to Expect",
+        items: [
+          "Crowds may be loud, emotional, and highly energetic.",
+          "Friendly banter is common, but you do not have to participate.",
+          "People may bond quickly over shared team loyalty.",
+        ],
+      },
+      {
+        heading: "Conversation Starters",
+        items: [
+          "How long have you been following this team?",
+          "What do you think of the matchup today?",
+          "Who’s your favorite player?",
+        ],
+      },
+      {
+        heading: "Exit Strategies",
+        items: [
+          "I’m going to grab food. Enjoy the game.",
+          "Good talking with you. I’m going to watch the next bit.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Professional Networking Event",
+    description:
+      "Prepare for introductions, small talk, and ending conversations politely.",
+    sections: [
+      {
+        heading: "What to Expect",
+        items: [
+          "People may ask what you do or what brought you there.",
+          "Short conversations are normal.",
+          "It is okay to move between groups.",
+        ],
+      },
+      {
+        heading: "Conversation Starters",
+        items: [
+          "What brought you to this event?",
+          "What kind of work do you do?",
+          "Are you working on anything interesting right now?",
+        ],
+      },
+      {
+        heading: "Exit Strategies",
+        items: [
+          "It was great meeting you. I’m going to say hello to a few other people.",
+          "Thanks for chatting. I hope the rest of the event goes well.",
+        ],
+      },
+    ],
+  },
+]
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+    <main className="min-h-screen bg-slate-950 px-6 py-12 text-white">
+      <section className="mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <h1 className="text-4xl font-bold">Social Situation Coach</h1>
+          <p className="mt-4 text-lg text-slate-300">
+            Prepare for unfamiliar social environments with clear expectations,
+            conversation starters, and exit strategies.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {scenarios.map((scenario) => (
+            <article
+              key={scenario.title}
+              className="rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-lg"
+            >
+              <h2 className="text-2xl font-semibold">{scenario.title}</h2>
+              <p className="mt-3 text-slate-300">{scenario.description}</p>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+              <div className="mt-6 space-y-5">
+                {scenario.sections.map((section) => (
+                  <section key={section.heading}>
+                    <h3 className="font-semibold text-sky-300">
+                      {section.heading}
+                    </h3>
+                    <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-300">
+                      {section.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    </main>
   )
 }
 
