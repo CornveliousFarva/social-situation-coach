@@ -3,6 +3,7 @@ import type { Scenario } from "../types/Scenario"
 
 interface ScenarioCardProps {
   scenario: Scenario
+  onSelect: (scenario: Scenario) => void
 }
 
 export const ScenarioCard: React.FC<ScenarioCardProps> = ({ scenario }) => {

@@ -5,16 +5,20 @@ import { ScenarioCard } from "./ScenarioCard"
 
 interface ScenarioListProps {
   scenarios: Scenario[]
+  onSelectScenario: (scenario: Scenario) => void
 }
 
 export const ScenarioList: React.FC<ScenarioListProps> = ({
-  scenarios,
+  scenarios, onSelectScenario
 }) => {
   return (
     <div className="space-y-4">
       {scenarios.map((scenario) => (
-        <ScenarioCard key={scenario.id} 
-        scenario={scenario} />
+        <ScenarioCard
+          key={scenario.id}
+          scenario={scenario}
+          onSelect={onSelectScenario}
+        />
       ))}
     </div>
   )
