@@ -6,7 +6,7 @@ interface ScenarioCardProps {
   onSelect: (scenario: Scenario) => void
 }
 
-export const ScenarioCard: React.FC<ScenarioCardProps> = ({ scenario }) => {
+export const ScenarioCard: React.FC<ScenarioCardProps> = ({ scenario, onSelect }) => {
   return (
     <div className="scenario-card">
       <h2>{scenario.title}</h2>
@@ -30,7 +30,7 @@ export const ScenarioCard: React.FC<ScenarioCardProps> = ({ scenario }) => {
         </p>
       </div>
 
-      <button className="mt-6 w-full rounded bg-sky-600 px-4 py-2 font-medium text-white hover:bg-sky-500">
+      <button onClick={() => onSelect(scenario)} className="mt-6 w-full rounded bg-sky-600 px-4 py-2 font-medium text-white hover:bg-sky-500">
         View Scenario
       </button>
     </div>
