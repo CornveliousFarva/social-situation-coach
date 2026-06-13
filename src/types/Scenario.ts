@@ -3,6 +3,7 @@ export type Scenario = {
   title: string
   category: string
   description: string
+//   Sections of the scenario
   expectedOutcomes: string[]
   conversationStarters: string[]
   socialNorms: string[]
