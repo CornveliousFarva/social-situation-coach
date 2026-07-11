@@ -6,14 +6,23 @@ import {
   type AnxietyLevel,
 } from "../components/AnxietySelector"
 import { AnxietyGuidance } from "../components/AnxietyGuidance"
+import type { EventReflection } from "../types/EventReflection"
+import { EventReflectionForm } from "../components/EventReflectionForm"
+import { ReflectionHistory } from "../components/ReflectionHistory"
 
 interface ScenarioPageProps {
   scenario: Scenario
+  reflections: EventReflection[]
+  onSaveReflection: (reflection: EventReflection) => void
+  onDeleteReflection: (reflectionId: string) => void
   onBack: () => void
 }
 
 export const ScenarioPage: React.FC<ScenarioPageProps> = ({
   scenario,
+  reflections,
+  onSaveReflection,
+  onDeleteReflection,
   onBack,
 }) => {
   const [anxietyLevel, setAnxietyLevel] =
@@ -77,6 +86,16 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
           <AnxietyGuidance level={anxietyLevel} />
 
           <ScenarioDetail scenario={scenario} />
+
+          <EventReflectionForm
+            scenario={scenario}
+            onSave={onSaveReflection}
+          />
+
+          <ReflectionHistory
+            reflections={reflections}
+            onDelete={onDeleteReflection}
+          />
         </div>
       </section>
     </main>
