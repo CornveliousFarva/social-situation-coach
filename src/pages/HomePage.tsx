@@ -1,6 +1,7 @@
 // The home page of the application, displaying a list of available scenarios
 import type { Scenario } from "../types/Scenario"
 import { ScenarioList } from "../components/ScenarioList"
+import { Footer } from "../components/Footer"
 
 interface HomePageProps {
   scenarios: Scenario[]
@@ -12,7 +13,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   onSelectScenario,
 }) => {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-12 text-white">
+    <><main className="min-h-screen bg-slate-950 px-6 py-12 text-white">
       <section className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-sky-300">
@@ -31,9 +32,8 @@ export const HomePage: React.FC<HomePageProps> = ({
 
         <ScenarioList
           scenarios={scenarios}
-          onSelectScenario={onSelectScenario}
-        />
+          onSelectScenario={onSelectScenario} />
       </section>
-    </main>
+    </main><Footer /></>
   )
 }
