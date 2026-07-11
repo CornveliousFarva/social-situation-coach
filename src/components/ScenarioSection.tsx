@@ -1,18 +1,37 @@
-// A section of the scenario with a title and a list of items
+import { useId } from "react"
+
 interface ScenarioSectionProps {
   title: string
   items: string[]
 }
 
-export const ScenarioSection: React.FC<ScenarioSectionProps> = ({ title, items }) => {
+export const ScenarioSection: React.FC<ScenarioSectionProps> = ({
+  title,
+  items,
+}) => {
+  const headingId = useId()
+
+  if (items.length === 0) {
+    return null
+  }
+
   return (
-    <div className="scenario-section">
-      <h3>{title}</h3>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>{item}</li>
+    <section
+      aria-labelledby={headingId}
+      className="rounded-lg border border-slate-700 bg-slate-800 p-5"
+    >
+      <h2
+        id={headingId}
+        className="mb-3 text-xl font-semibold text-sky-300"
+      >
+        {title}
+      </h2>
+
+      <ul className="list-disc space-y-2 pl-6 text-slate-100">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }

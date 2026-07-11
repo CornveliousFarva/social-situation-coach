@@ -1,4 +1,3 @@
-// A detailed view of a scenario with its title, description, and related sections
 import type { Scenario } from "../types/Scenario"
 import { ScenarioSection } from "./ScenarioSection"
 
@@ -9,14 +8,9 @@ interface ScenarioDetailProps {
 export const ScenarioDetail: React.FC<ScenarioDetailProps> = ({
   scenario,
 }) => {
-
   return (
-    <div className="space-y-6 rounded-lg bg-slate-900 p-6 text-white">
-      <h1 className="text-3xl font-bold">
-        {scenario.title}
-      </h1>
-
-      <p className="text-slate-300">
+    <div className="space-y-6">
+      <p className="text-lg leading-relaxed text-slate-200">
         {scenario.description}
       </p>
 
@@ -54,7 +48,6 @@ export const ScenarioDetail: React.FC<ScenarioDetailProps> = ({
         title="Resources"
         items={scenario.resources}
       />
-
     </div>
   )
 }
