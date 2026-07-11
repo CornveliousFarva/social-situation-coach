@@ -35,7 +35,7 @@ export const ReflectionHistory = ({
         </h2>
 
         <p className="mt-3 text-slate-300">
-          You have not saved any reflections for this scenario yet.
+          Your journey starts here. Attend a scenario, complete a reflection, and watch your progress grow over time.
         </p>
       </section>
     )
