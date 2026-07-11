@@ -1,6 +1,11 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import type { Scenario } from "../types/Scenario"
 import { ScenarioDetail } from "../components/ScenarioDetail"
+import {
+  AnxietySelector,
+  type AnxietyLevel,
+} from "../components/AnxietySelector"
+import { AnxietyGuidance } from "../components/AnxietyGuidance"
 
 interface ScenarioPageProps {
   scenario: Scenario
@@ -11,10 +16,14 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
   scenario,
   onBack,
 }) => {
+  const [anxietyLevel, setAnxietyLevel] =
+    useState<AnxietyLevel>("moderate")
+
   const headingRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
     headingRef.current?.focus()
+    setAnxietyLevel("moderate")
   }, [scenario.id])
 
   return (
@@ -53,18 +62,22 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
             ref={headingRef}
             id="scenario-page-title"
             tabIndex={-1}
-            className="
-              text-4xl font-bold
-              focus:outline-none
-              focus-visible:ring-4
-              focus-visible:ring-sky-300
-            "
+            className="text-4xl font-bold focus:outline-none"
           >
             {scenario.title}
           </h1>
         </header>
 
-        <ScenarioDetail scenario={scenario} />
+        <div className="space-y-6">
+          <AnxietySelector
+            value={anxietyLevel}
+            onChange={setAnxietyLevel}
+          />
+
+          <AnxietyGuidance level={anxietyLevel} />
+
+          <ScenarioDetail scenario={scenario} />
+        </div>
       </section>
     </main>
   )
