@@ -37,9 +37,9 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
   }, [scenario.id])
 
   return (
+    <div className="flex min-h-screen flex-col bg-slate-950 text-white">
     <main
-      id="main-content"
-      className="min-h-screen bg-slate-950 px-6 py-12 text-white"
+      className="flex-1 px-6 py-12"
     >
       <section
         aria-labelledby="scenario-page-title"
@@ -102,5 +102,6 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
 
       <Footer />
     </main>
+    </div>
   )
 }
