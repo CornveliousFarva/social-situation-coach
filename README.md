@@ -110,6 +110,18 @@ Planned
 * Data export/import
 * Optional cloud synchronization
 
+## Features
+
+- Prepare for unfamiliar social situations with structured guidance
+- Scenario-based coaching
+- Anxiety-specific preparation tips
+- Personal event reflection journal
+- Local progress tracking
+- Keyboard accessible interface
+- Screen reader support
+- Responsive design
+- Persistent local storage
+
 Why I Built This
 
 Social Situation Coach was created to help people approach unfamiliar social environments with greater confidence. Rather than focusing on rigid social “rules,” the application emphasizes preparation, realistic expectations, accessibility, and personal growth through structured guidance and self-reflection.
