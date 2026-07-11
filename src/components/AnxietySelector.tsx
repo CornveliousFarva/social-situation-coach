@@ -27,10 +27,10 @@ const anxietyOptions: {
   },
 ]
 
-export const AnxietySelector: React.FC<AnxietySelectorProps> = ({
+export const AnxietySelector = ({
   value,
   onChange,
-}) => {
+}: AnxietySelectorProps) => {
   return (
     <fieldset className="rounded-lg border border-slate-700 bg-slate-900 p-5">
       <legend className="px-2 text-xl font-semibold text-white">
