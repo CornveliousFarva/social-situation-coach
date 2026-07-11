@@ -30,9 +30,9 @@ const guidance: Record<AnxietyLevel, string[]> = {
 }
 
 // 
-export const AnxietyGuidance: React.FC<AnxietyGuidanceProps> = ({
+export const AnxietyGuidance = ({
   level,
-}) => {
+}: AnxietyGuidanceProps) => {
   const headingId = `anxiety-guidance-${level}`
 
   return (
