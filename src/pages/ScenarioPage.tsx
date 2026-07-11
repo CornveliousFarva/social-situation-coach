@@ -9,6 +9,7 @@ import { AnxietyGuidance } from "../components/AnxietyGuidance"
 import type { EventReflection } from "../types/EventReflection"
 import { EventReflectionForm } from "../components/EventReflectionForm"
 import { ReflectionHistory } from "../components/ReflectionHistory"
+import { Footer } from "../components/Footer"
 
 interface ScenarioPageProps {
   scenario: Scenario
@@ -98,6 +99,8 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
           />
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }
