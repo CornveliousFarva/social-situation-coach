@@ -4,14 +4,18 @@ import type { Scenario } from "../types/Scenario"
 import { ScenarioList } from "../components/ScenarioList"
 import { ScenarioFilters } from "../components/ScenarioFilters"
 import { Footer } from "../components/Footer"
+import type { EventReflection } from "../types/EventReflection"
+import { ProgressDashboard } from "../components/ProgressDashboard"
 
 interface HomePageProps {
   scenarios: Scenario[]
+  reflections: EventReflection[]
   onSelectScenario: (scenario: Scenario) => void
 }
 
 export const HomePage = ({
   scenarios,
+  reflections,
   onSelectScenario,
 }: HomePageProps) => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -66,6 +70,8 @@ export const HomePage = ({
               potential challenges, and respectful exit strategies.
             </p>
           </header>
+
+          <ProgressDashboard reflections={reflections} />
 
           <ScenarioFilters
             searchTerm={searchTerm}

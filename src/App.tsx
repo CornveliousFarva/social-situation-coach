@@ -66,6 +66,7 @@ function App() {
   return (
     <HomePage
       scenarios={scenarios}
+      reflections={reflections}
       onSelectScenario={setSelectedScenario}
     />
   )
