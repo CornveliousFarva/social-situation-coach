@@ -33,14 +33,14 @@ export const AnxietySelector = ({
 }: AnxietySelectorProps) => {
   return (
     <fieldset className="rounded-xl border border-slate-600 bg-slate-900 px-5 pb-5 pt-3">
-      <legend className="max-w-full bg-slate-950 px-3 text-xl font-semibold leading-snug text-white sm:text-2xl">
-        How anxious do you feel about this situation?
-      </legend>
+      <h2 className="text-2xl font-bold text-white">
 
-      <p className="mt-2 text-slate-300">
-        Choose the option that best reflects how you feel right now.
-      </p>
+    How anxious do you feel about this situation?
+  </h2>
 
+  <p className="mt-3 text-slate-300">
+    Choose the option that best reflects how you feel right now.
+  </p>
       <div className="mt-5 space-y-3">
         {anxietyOptions.map((option) => {
           const inputId = `anxiety-${option.value}`
