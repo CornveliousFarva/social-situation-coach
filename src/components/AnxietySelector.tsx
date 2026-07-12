@@ -32,8 +32,8 @@ export const AnxietySelector = ({
   onChange,
 }: AnxietySelectorProps) => {
   return (
-    <fieldset className="rounded-lg border border-slate-700 bg-slate-900 p-5">
-      <legend className="px-2 text-xl font-semibold text-white">
+    <fieldset className="rounded-xl border border-slate-600 bg-slate-900 px-5 pb-5 pt-3">
+      <legend className="max-w-full bg-slate-950 px-3 text-xl font-semibold leading-snug text-white sm:text-2xl">
         How anxious do you feel about this situation?
       </legend>
 
