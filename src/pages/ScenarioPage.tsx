@@ -43,7 +43,7 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
     >
       <section
         aria-labelledby="scenario-page-title"
-        className="mx-auto max-w-4xl"
+        className="mx-auto w-full max-w-4xl"
       >
         <button
           type="button"
@@ -63,7 +63,7 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
           Back to Scenarios
         </button>
 
-        <header className="mb-8">
+        <header className="mb-10 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-sky-300">
             Social Situation Coach
           </p>
@@ -72,7 +72,7 @@ export const ScenarioPage: React.FC<ScenarioPageProps> = ({
             ref={headingRef}
             id="scenario-page-title"
             tabIndex={-1}
-            className="text-4xl font-bold focus:outline-none"
+            className="text-3xl font-bold leading-tight focus:outline-none sm:text-4xl lg:text-5xl"
           >
             {scenario.title}
           </h1>
