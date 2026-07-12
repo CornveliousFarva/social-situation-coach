@@ -17,6 +17,26 @@ Screenshots
 
 The following screenshots demonstrate how the application adapts guidance based on a user’s anxiety level and supports reflection and progress tracking after attending social events.
 
+High Anxiety
+screenshots/High.png
+
+Low Anxiety
+screenshots/Low.png
+
+Moderate Anxiety
+screenshots/Moderate.png
+
+Progress Dashboard
+screenshots/Progress Dashboard.png
+
+Reflection Screenshot 1
+screenshots/Reflection.png
+
+Reflection Screenshot 2
+screenshots/Reflection 2.png
+
+Reflection Screenshot 3
+screenshots/Reflection 3.png
 
 
 Accessibility
