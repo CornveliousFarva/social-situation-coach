@@ -13,6 +13,12 @@ Features
 * Scenario navigation with reusable React components
 * Responsive interface built with Tailwind CSS
 
+Screenshots
+
+The following screenshots demonstrate how the application adapts guidance based on a user’s anxiety level and supports reflection and progress tracking after attending social events.
+
+
+
 Accessibility
 
 Accessibility has been a core design goal throughout development.
